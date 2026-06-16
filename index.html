@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustavo Bitencourt</title>
-
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- BOLINHAS FLUTUANTES -->
+    <div class="bubbles" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
     <header>
-
         <nav>
-
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#experiencia">Experiência</a></li>
@@ -23,152 +29,107 @@
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-
         </nav>
-
     </header>
 
     <!-- HERO -->
-
     <section class="hero">
 
         <div class="hero-text">
 
+            <p class="hero-ola">Olá, eu sou</p>
             <h1>Gustavo Bitencourt</h1>
-
             <h3>Estudante de Ciência da Computação</h3>
 
             <p>
                 Atualmente atuo como Jovem Aprendiz na Aramis e curso
-                Ciência da Computação na FIAP.
-
-                Sou apaixonado por tecnologia, desenvolvimento de software
-                e Inteligência Artificial.
-
+                Ciência da Computação na FIAP. Sou apaixonado por tecnologia,
+                desenvolvimento de software e Inteligência Artificial.
                 Meu objetivo é ingressar na área de tecnologia através de um estágio,
                 aplicando meus conhecimentos e evoluindo profissionalmente.
             </p>
 
             <div class="botoes">
-
-                <a href="#" class="btn btn-primary">
-                    LinkedIn
+                <a href="#sobre" class="btn btn-primary">
+                    <i class="fas fa-arrow-down"></i> Saiba mais
                 </a>
-
-                <a href="#" class="btn btn-secondary">
-                    Currículo
+                <a href="#contato" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contato
                 </a>
+            </div>
 
+            <div class="socials">
+                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gustavo-bitencourt-lopes-b765072b5" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
 
         </div>
 
         <div class="hero-img">
-
-            <img src="img/profile-pic.png" alt="Gustavo">
-
+            <img src="img/profile-pic.png" alt="Gustavo Bitencourt">
         </div>
 
     </section>
 
+    <div class="scroll-down">
+        <a href="#sobre">
+            <i class="fas fa-chevron-down"></i>
+            <span>Role para baixo</span>
+        </a>
+    </div>
+
     <!-- SOBRE -->
-
     <section id="sobre">
-
         <h2 class="section-title">Sobre Mim</h2>
-
-        <p>
+        <p class="section-text">
             Sou estudante de Ciência da Computação na FIAP e atualmente
-            trabalho como Jovem Aprendiz na Aramis.
-
-            Meu objetivo é conquistar uma oportunidade de estágio em tecnologia
-            para desenvolver minhas habilidades em programação, desenvolvimento
-            de software e Inteligência Artificial.
+            trabalho como Jovem Aprendiz na Aramis. Meu objetivo é conquistar
+            uma oportunidade de estágio em tecnologia para desenvolver minhas
+            habilidades em programação, desenvolvimento de software e
+            Inteligência Artificial.
         </p>
-
     </section>
 
     <!-- EXPERIÊNCIA -->
-
     <section id="experiencia">
-
         <h2 class="section-title">Experiência Profissional</h2>
-
         <div class="card">
-
             <h3>Aramis Inc.</h3>
-
-            <h4>Jovem Aprendiz - Expansão de Franquias</h4>
-
+            <h4>Jovem Aprendiz — Expansão de Franquias</h4>
             <p>
                 Atuo apoiando atividades relacionadas à expansão da rede,
                 organização de informações e processos internos da empresa.
             </p>
-
         </div>
-
     </section>
 
     <!-- FORMAÇÃO -->
-
     <section id="formacao">
-
-        <h2 class="section-title">
-            Formação e Cursos
-        </h2>
-
+        <h2 class="section-title">Formação e Cursos</h2>
         <div class="cards-grid">
-
             <div class="card">
-
                 <h3>FIAP</h3>
-
-                <br>
-
-                <p>
-                    Bacharelado em Ciência da Computação
-                </p>
-
+                <p>Bacharelado em Ciência da Computação</p>
             </div>
-
             <div class="card">
-
                 <h3>SENAC</h3>
-
-                <br>
-
-                <p>
-                    Ensino Médio Técnico em Tecnologia da Informação
-                </p>
-
+                <p>Ensino Médio Técnico em Tecnologia da Informação</p>
             </div>
-
             <div class="card">
-
                 <h3>Open English</h3>
-
-                <br>
-
-                <p>
-                    Inglês Avançado
-                </p>
-
+                <p>Inglês Avançado</p>
             </div>
-
         </div>
-
     </section>
 
     <!-- HABILIDADES -->
-
     <section id="habilidades">
-
-        <h2 class="section-title">
-            Habilidades
-        </h2>
-
+        <h2 class="section-title">Habilidades</h2>
         <div class="skills">
-
             <span>Python</span>
             <span>Java</span>
             <span>HTML</span>
@@ -179,157 +140,172 @@
             <span>SQL</span>
             <span>Inteligência Artificial</span>
             <span>Inglês Avançado</span>
-
         </div>
-
     </section>
 
     <!-- PROJETOS -->
-
     <section id="projetos">
-
-        <h2 class="section-title">
-            Projetos
-        </h2>
-
+        <h2 class="section-title">Projetos</h2>
         <div class="cards-grid">
-
             <div class="card">
-
-                <h3>FinTrack</h3>
-
-                <p>
-                    Aplicação para controle de finanças pessoais, com
-                    cadastro de receitas, despesas e visualização de gastos.
-                </p>
-
+                <h3><i class="fas fa-chart-line card-icon"></i> FinTrack</h3>
+                <p>Aplicação para controle de finanças pessoais, com cadastro de receitas, despesas e visualização de gastos.</p>
+                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="card">
-
-                <h3>PangolesGames</h3>
-
-                <p>
-                    Projeto voltado para o desenvolvimento e organização
-                    de jogos, explorando lógica de programação e interface.
-                </p>
-
+                <h3><i class="fas fa-gamepad card-icon"></i> PangolesGames</h3>
+                <p>Projeto voltado para o desenvolvimento e organização de jogos, explorando lógica de programação e interface.</p>
+                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="card">
-
-                <h3>Aplicações em Java</h3>
-
-                <p>
-                    Conjunto de projetos desenvolvidos em Java aplicando
-                    conceitos de orientação a objetos e estruturas de dados.
-                </p>
-
+                <h3><i class="fab fa-java card-icon"></i> Aplicações em Java</h3>
+                <p>Conjunto de projetos desenvolvidos em Java aplicando conceitos de orientação a objetos e estruturas de dados.</p>
+                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="card">
-
-                <h3>Projetos com Arduino</h3>
-
-                <p>
-                    Desenvolvimento de protótipos eletrônicos utilizando
-                    Arduino, integrando hardware e software.
-                </p>
-
+                <h3><i class="fas fa-microchip card-icon"></i> Projetos com Arduino</h3>
+                <p>Desenvolvimento de protótipos eletrônicos utilizando Arduino, integrando hardware e software.</p>
+                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
             </div>
-
         </div>
-
     </section>
 
     <!-- CONTATO -->
+    <section id="contato">
+        <h2 class="section-title">Entre em Contato</h2>
 
-    <section id="contato" class="contato">
+        <div class="contato-grid">
 
-        <h2 class="section-title">
-            Vamos Conversar?
-        </h2>
+            <!-- Lado esquerdo -->
+            <div class="contato-info card">
+                <h3>Vamos conversar!</h3>
+                <p>Estou aberto a oportunidades de estágio, networking e projetos relacionados à tecnologia. Não hesite em entrar em contato!</p>
 
-        <p>
-            Estou aberto a oportunidades de estágio,
-            networking e projetos relacionados à tecnologia.
-        </p>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <strong>Email</strong>
+                        <span>bitencourtgustavo007@gmail.com</span>
+                    </div>
+                </div>
 
-        <div class="contato-links">
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <strong>Localização</strong>
+                        <span>São Paulo, SP — Brasil</span>
+                    </div>
+                </div>
 
-            <a href="#" class="btn btn-primary">
-                LinkedIn
-            </a>
+                <p class="redes-label">Redes Sociais</p>
+                <div class="contato-social-btns">
+                    <a href="https://github.com/GustavoBitencourtLopes" target="_blank" rel="noopener" class="social-pill">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gustavo-bitencourt-lopes-b765072b5" target="_blank" rel="noopener" class="social-pill">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
 
-            <a href="#" class="btn btn-secondary">
-                GitHub
-            </a>
+            <!-- Formulário -->
+            <div class="contato-form card">
+                <h3>Envie uma mensagem</h3>
 
-            <a href="mailto:seuemail@gmail.com" class="btn btn-secondary">
-                Email
-            </a>
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nome</label>
+                    <input type="text" placeholder="Seu nome completo" id="form-nome">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" placeholder="seu@email.com" id="form-email">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-comment-dots"></i> Assunto</label>
+                    <input type="text" placeholder="Qual o assunto da sua mensagem?" id="form-assunto">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> Mensagem</label>
+                    <textarea placeholder="Conte-me sobre seu projeto ou ideia..." id="form-mensagem" rows="5"></textarea>
+                </div>
+
+                <button class="btn-enviar" onclick="enviarEmail()">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                </button>
+            </div>
 
         </div>
-
     </section>
 
     <!-- RODAPÉ -->
-
     <footer>
-
         <div class="footer-container">
 
-            <div>
-
+            <div class="footer-sobre">
                 <h3>Gustavo Bitencourt</h3>
-
-                <p>
-                    Estudante de Ciência da Computação
-                    apaixonado por tecnologia e inovação.
-                </p>
-
+                <p>Estudante de Ciência da Computação apaixonado por tecnologia e inovação.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/GustavoBitencourtLopes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gustavo-bitencourt-lopes-b765072b5" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:bitencourtgustavo007@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
 
             <div>
-
                 <h4>Navegação</h4>
-
                 <ul>
-
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#formacao">Formação</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#contato">Contato</a></li>
-
                 </ul>
-
             </div>
 
             <div>
-
-                <h4>Tecnologias</h4>
-
-                <ul>
-
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-
-                </ul>
-
+                <h4>Habilidades</h4>
+                <div class="footer-skills">
+                    <span>Python</span>
+                    <span>Java</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>SQL</span>
+                    <span>Git</span>
+                    <span>IA</span>
+                </div>
             </div>
 
         </div>
 
         <hr>
 
-        <p class="copy">
-            © 2026 Gustavo Bitencourt
-        </p>
-
+        <p class="copy">© 2026 Gustavo Bitencourt — Todos os direitos reservados</p>
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        function enviarEmail() {
+            const nome = document.getElementById('form-nome').value.trim();
+            const email = document.getElementById('form-email').value.trim();
+            const assunto = document.getElementById('form-assunto').value.trim();
+            const mensagem = document.getElementById('form-mensagem').value.trim();
+
+            if (!nome || !email || !mensagem) {
+                alert('Por favor, preencha nome, email e mensagem.');
+                return;
+            }
+
+            const corpo = `Nome: ${nome}%0AEmail: ${email}%0A%0A${mensagem}`;
+            window.location.href = `mailto:bitencourtgustavo007@gmail.com?subject=${encodeURIComponent(assunto || 'Mensagem do portfólio')}&body=${corpo}`;
+        }
+    </script>
 
 </body>
 </html>
