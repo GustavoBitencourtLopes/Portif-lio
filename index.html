@@ -173,27 +173,13 @@
     <!-- PROJETOS -->
     <section id="projetos">
         <h2 class="section-title">Projetos</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <h3><i class="fas fa-chart-line card-icon"></i> FinTrack</h3>
-                <p>Aplicação para controle de finanças pessoais, com cadastro de receitas, despesas e visualização de gastos.</p>
-                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="card">
-                <h3><i class="fas fa-gamepad card-icon"></i> PangolesGames</h3>
-                <p>Projeto voltado para o desenvolvimento e organização de jogos, explorando lógica de programação e interface.</p>
-                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="card">
-                <h3><i class="fab fa-java card-icon"></i> Aplicações em Java</h3>
-                <p>Conjunto de projetos desenvolvidos em Java aplicando conceitos de orientação a objetos e estruturas de dados.</p>
-                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="card">
-                <h3><i class="fas fa-microchip card-icon"></i> Projetos com Arduino</h3>
-                <p>Desenvolvimento de protótipos eletrônicos utilizando Arduino, integrando hardware e software.</p>
-                <a href="https://github.com/GustavoBitencourtLopes" target="_blank" class="card-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+        <div class="projetos-vazio">
+            <i class="fas fa-tools"></i>
+            <h3>Em construção</h3>
+            <p>Estou desenvolvendo meus primeiros projetos. Em breve essa seção será atualizada com tudo que estou construindo.</p>
+            <a href="https://github.com/GustavoBitencourtLopes" target="_blank" rel="noopener" class="card-link">
+                Acompanhe no GitHub <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
@@ -261,9 +247,11 @@
                     <textarea placeholder="Conte-me sobre seu projeto ou ideia..." id="form-mensagem" rows="5"></textarea>
                 </div>
 
-                <button class="btn-enviar" onclick="enviarEmail()">
+                <button class="btn-enviar" id="btn-enviar" onclick="enviarMensagem()">
                     <i class="fas fa-paper-plane"></i> Enviar Mensagem
                 </button>
+
+                <p id="form-feedback" class="form-feedback"></p>
             </div>
 
         </div>
@@ -329,20 +317,61 @@
             btnTopo.classList.toggle('visivel', window.scrollY > 400);
         });
 
-        // Formulário de contato
-        function enviarEmail() {
+        // ===== Configuração do Supabase =====
+        const SUPABASE_URL = 'https://mavxekuvtzebcglmovzc.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_c3C040q-F9gZpsXeiX7l7A_jyyypddk';
+
+        // Envia a mensagem do formulário para a tabela "mensagens" no Supabase
+        async function enviarMensagem() {
             const nome = document.getElementById('form-nome').value.trim();
             const email = document.getElementById('form-email').value.trim();
             const assunto = document.getElementById('form-assunto').value.trim();
             const mensagem = document.getElementById('form-mensagem').value.trim();
+            const btn = document.getElementById('btn-enviar');
+            const feedback = document.getElementById('form-feedback');
+
+            feedback.textContent = '';
+            feedback.className = 'form-feedback';
 
             if (!nome || !email || !mensagem) {
-                alert('Por favor, preencha nome, email e mensagem.');
+                feedback.textContent = 'Preencha nome, email e mensagem.';
+                feedback.classList.add('erro');
                 return;
             }
 
-            const corpo = `Nome: ${nome}%0AEmail: ${email}%0A%0A${mensagem}`;
-            window.location.href = `mailto:bitencourtgustavo007@gmail.com?subject=${encodeURIComponent(assunto || 'Mensagem do portfólio')}&body=${corpo}`;
+            // Trava o botão enquanto envia, pra evitar clique duplo
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+            try {
+                const resposta = await fetch(`${SUPABASE_URL}/rest/v1/mensagens`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`
+                    },
+                    body: JSON.stringify({ nome, email, assunto, mensagem })
+                });
+
+                if (!resposta.ok) throw new Error('Falha no envio');
+
+                feedback.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
+                feedback.classList.add('sucesso');
+
+                // Limpa o formulário
+                document.getElementById('form-nome').value = '';
+                document.getElementById('form-email').value = '';
+                document.getElementById('form-assunto').value = '';
+                document.getElementById('form-mensagem').value = '';
+
+            } catch (erro) {
+                feedback.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
+                feedback.classList.add('erro');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
+            }
         }
     </script>
 

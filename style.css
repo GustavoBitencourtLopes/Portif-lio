@@ -568,7 +568,7 @@ section{
 }
 
 .empresa-logo{
-    height:140px;
+    height:100px;
     width:auto;
     object-fit:contain;
     filter:brightness(1.15);
@@ -657,6 +657,39 @@ section{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:24px;
+}
+
+/* =========================
+   PROJETOS — estado vazio
+========================= */
+
+.projetos-vazio{
+    max-width:520px;
+    margin:0 auto;
+    text-align:center;
+    background:rgba(255,255,255,.03);
+    border:1px dashed rgba(56,189,248,.3);
+    border-radius:24px;
+    padding:60px 40px;
+}
+
+.projetos-vazio i{
+    font-size:2.5rem;
+    color:#38bdf8;
+    opacity:.7;
+    margin-bottom:20px;
+}
+
+.projetos-vazio h3{
+    color:white;
+    font-size:1.4rem;
+    margin-bottom:14px;
+}
+
+.projetos-vazio p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:26px;
 }
 
 /* =========================
@@ -846,9 +879,27 @@ section{
     box-shadow:0 8px 28px rgba(56,189,248,.45);
 }
 
+.btn-enviar:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* mensagem de retorno do envio (sucesso ou erro) */
+.form-feedback{
+    margin-top:14px;
+    font-size:.9rem;
+    text-align:center;
+    min-height:1.2em;
+}
+
+.form-feedback.sucesso{ color:#22c55e; }
+.form-feedback.erro{ color:#f87171; }
+
 /* =========================
    FOOTER
 ========================= */
+
 
 footer{
     background:#07101f;
