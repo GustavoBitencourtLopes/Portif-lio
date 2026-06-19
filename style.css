@@ -126,6 +126,25 @@ nav a:hover::after{ width:100%; }
     padding:0 10%;
     position:relative;
     z-index:1;
+    text-align:center;
+}
+
+.hero-text{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-eyebrow{
+    justify-content:center;
+}
+
+.botoes{
+    justify-content:center;
+}
+
+.hero-bottom{
+    justify-content:center;
 }
 
 .hero::before{
@@ -178,7 +197,22 @@ nav a:hover::after{ width:100%; }
     50%{ opacity:0; }
 }
 
-.hero-text{ max-width:600px; }
+.hero-text{
+    max-width:600px;
+    text-align:center;
+}
+
+.hero-eyebrow{
+    justify-content:center;
+}
+
+.botoes{
+    justify-content:center;
+}
+
+.hero-bottom{
+    justify-content:center;
+}
 
 .hero-text h1{
     font-size:4.8rem;
@@ -552,7 +586,7 @@ section{
 .experiencia-header{
     position:relative;
     background:linear-gradient(135deg, #000 60%, #1a0a0a 100%);
-    padding:44px 40px;
+    padding:60px 40px;
     border-bottom:1px solid rgba(255,255,255,.06);
     display:flex;
     align-items:center;
@@ -568,7 +602,7 @@ section{
 }
 
 .empresa-logo{
-    height:100px;
+    height:140px;
     width:auto;
     object-fit:contain;
     filter:brightness(1.15);
@@ -660,36 +694,262 @@ section{
 }
 
 /* =========================
-   PROJETOS — estado vazio
+   PROJETOS — grid de cards
 ========================= */
 
-.projetos-vazio{
-    max-width:520px;
-    margin:0 auto;
+.projetos-aviso{
+    max-width:650px;
+    margin:-30px auto 50px;
     text-align:center;
+    color:#94a3b8;
+    font-size:.98rem;
+    line-height:1.8;
+}
+
+.projetos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:28px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.projeto-card{
     background:rgba(255,255,255,.03);
-    border:1px dashed rgba(56,189,248,.3);
-    border-radius:24px;
-    padding:60px 40px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:.4s;
 }
 
-.projetos-vazio i{
-    font-size:2.5rem;
-    color:#38bdf8;
-    opacity:.7;
-    margin-bottom:20px;
+.projeto-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(56,189,248,.4);
+    box-shadow:0 12px 40px rgba(56,189,248,.12);
 }
 
-.projetos-vazio h3{
+/* banner colorido no topo do card, com ícone grande */
+.projeto-banner{
+    height:140px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    color:rgba(255,255,255,.9);
+}
+
+.banner-1{ background:linear-gradient(135deg, #38bdf8, #2563eb); }
+.banner-2{ background:linear-gradient(135deg, #0ea5e9, #075985); }
+.banner-3{ background:linear-gradient(135deg, #7dd3fc, #1d4ed8); }
+
+.projeto-corpo{
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.projeto-corpo h3{
     color:white;
-    font-size:1.4rem;
+    font-size:1.2rem;
+    margin-bottom:10px;
+}
+
+.projeto-corpo > p{
+    color:#94a3b8;
+    font-size:.92rem;
+    line-height:1.7;
+    margin-bottom:18px;
+    flex:1;
+}
+
+.projeto-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:22px;
+}
+
+.projeto-tags span{
+    background:rgba(56,189,248,.1);
+    border:1px solid rgba(56,189,248,.25);
+    color:#7dd3fc;
+    padding:5px 13px;
+    border-radius:20px;
+    font-size:.78rem;
+    font-weight:600;
+}
+
+.projeto-acoes{
+    display:flex;
+    gap:10px;
+}
+
+.btn-detalhes{
+    flex:1;
+    padding:10px 16px;
+    border-radius:50px;
+    border:1.5px solid rgba(56,189,248,.5);
+    background:transparent;
+    color:#38bdf8;
+    font-size:.85rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-detalhes:hover{
+    background:rgba(56,189,248,.1);
+    border-color:#38bdf8;
+}
+
+.btn-github{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:10px 16px;
+    border-radius:50px;
+    border:none;
+    background:#38bdf8;
+    color:#0b1120;
+    font-size:.85rem;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-github:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(56,189,248,.4);
+}
+
+/* =========================
+   MODAL — Ver Detalhes do projeto
+========================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(4px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s;
+}
+
+.modal-overlay.aberto{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-box{
+    background:#0f1729;
+    border:1px solid rgba(56,189,248,.25);
+    border-radius:24px;
+    padding:40px;
+    max-width:560px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    position:relative;
+    transform:translateY(20px);
+    transition:transform .3s;
+}
+
+.modal-overlay.aberto .modal-box{
+    transform:translateY(0);
+}
+
+.modal-fechar{
+    position:absolute;
+    top:20px; right:20px;
+    width:36px; height:36px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:#94a3b8;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-fechar:hover{
+    background:rgba(248,113,113,.15);
+    border-color:rgba(248,113,113,.4);
+    color:#f87171;
+}
+
+.modal-box h3{
+    color:#38bdf8;
+    font-size:1.3rem;
     margin-bottom:14px;
 }
 
-.projetos-vazio p{
-    color:#94a3b8;
+.modal-box h4{
+    color:white;
+    font-size:1rem;
+    margin:24px 0 12px;
+}
+
+.modal-box > p{
+    color:#cbd5e1;
     line-height:1.8;
-    margin-bottom:26px;
+    font-size:.95rem;
+}
+
+.modal-box ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.modal-box ul li{
+    color:#94a3b8;
+    font-size:.92rem;
+    padding-left:22px;
+    position:relative;
+}
+
+.modal-box ul li::before{
+    content:"\f00c";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+    color:#38bdf8;
+    position:absolute;
+    left:0;
+    font-size:.75rem;
+}
+
+.modal-tech{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.modal-tech span{
+    color:#94a3b8;
+    font-size:.9rem;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.06);
+    padding:10px 14px;
+    border-radius:10px;
+}
+
+.modal-tech span strong{ color:#38bdf8; }
+
+.modal-github{
+    margin-top:26px;
+    width:100%;
 }
 
 /* =========================
