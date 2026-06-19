@@ -2,7 +2,7 @@
 
 Portfólio pessoal desenvolvido para reunir minha trajetória, experiência profissional, formação e projetos como estudante de Ciência da Computação.
 
-🌐 **Deploy:** [SEU LINK DA VERCEL AQUI]
+🌐 **Deploy:** https://portfolio-gustavo-bitencourt.vercel.app/
 
 ---
 
