@@ -176,18 +176,19 @@
 
         <div class="projetos-grid">
 
-                    <!-- Projeto 1 -->
+                            <!-- Projeto 1 -->
         <div class="projeto-card">
             <div class="projeto-banner banner-1">
-                <i class="fas fa-bolt"></i>
+                <i class="fas fa-charging-station"></i>
             </div>
             <div class="projeto-corpo">
                 <h3>ChargeGrid Intelligence</h3>
-                <p>Simulador completo de sessão de recarga de veículos elétricos com tarifação inteligente, abas de pagamento e foco em eficiência energética — desafio GoodWe & FIAP 2026.</p>
+                <p>Plataforma full-stack de simulação de recarga de veículos elétricos com tarifação inteligente, autenticação de usuários e assistente de IA — desafio GoodWe & FIAP 2026.</p>
                 <div class="projeto-tags">
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>IA</span>
                 </div>
                 <div class="projeto-acoes">
                     <button class="btn-detalhes" onclick="abrirModal('modal-projeto1')">Ver Detalhes</button>
@@ -248,28 +249,33 @@
 
     <!-- ===== MODAIS DE DETALHES DOS PROJETOS ===== -->
 
-        <!-- Modal ChargeGrid -->
-    <div class="modal-overlay" id="modal-projeto1" onclick="fecharModalFora(event, 'modal-projeto1')">
+            <!-- Modal ChargeGrid -->
+        <div class="modal-overlay" id="modal-projeto1" onclick="fecharModalFora(event, 'modal-projeto1')">
         <div class="modal-box">
             <button class="modal-fechar" onclick="fecharModal('modal-projeto1')"><i class="fas fa-times"></i></button>
             <h3>Sobre o Projeto</h3>
-            <p>Simulador completo de sessão de recarga de veículos elétricos desenvolvido para o desafio GoodWe & FIAP 2026. O sistema calcula energia consumida, aplica tarifação inteligente por potência e horário, e apresenta um resumo financeiro completo com opções de pagamento.</p>
+            <p>Plataforma web full-stack de simulação de recarga de veículos elétricos, desenvolvida para o desafio GoodWe & FIAP 2026. O sistema oferece autenticação de usuários, onboarding de veículos, diferentes tipos de carregador, tarifação dinâmica por horário de pico e um assistente de IA que analisa dados reais de carregamento.</p>
 
             <h4>Funcionalidades</h4>
             <ul>
-                <li>Cálculo de energia consumida (kWh) por potência e tempo</li>
-                <li>Tarifação por faixa de potência do carregador (lento, semirrápido, rápido)</li>
-                <li>Acréscimo de 30% em horário de pico</li>
-                <li>Desconto de 20% para usuários premium</li>
-                <li>Aba de pagamento com PIX, cartão e boleto</li>
-                <li>Resumo financeiro completo da sessão</li>
+                <li>Autenticação de usuários com login e cadastro</li>
+                <li>Onboarding de veículo em duas etapas</li>
+                <li>Carregadores AC (7kW e 22kW) e DC 60kW exclusivo VIP</li>
+                <li>Tarifação dinâmica com acréscimo em horário de pico (fuso de São Paulo)</li>
+                <li>Sistema de cupons, cashback e assinatura VIP</li>
+                <li>Fluxos de pagamento simulados (cartão, Pix e carteira digital)</li>
+                <li>Assistente de IA (Google Gemini) integrado com dados reais dos carregadores</li>
+                <li>Deploy na nuvem (Render)</li>
             </ul>
 
             <h4>Tecnologias e Ferramentas</h4>
             <div class="modal-tech">
-                <span><strong>JavaScript</strong> — lógica de cálculo e regras de tarifação</span>
-                <span><strong>HTML</strong> — estrutura das abas e interface</span>
-                <span><strong>CSS</strong> — estilização do sistema</span>
+                <span><strong>Python</strong> — linguagem principal</span>
+                <span><strong>Flask</strong> — framework web</span>
+                <span><strong>SQLAlchemy / SQLite</strong> — banco de dados</span>
+                <span><strong>Google Gemini</strong> — assistente de IA integrado</span>
+                <span><strong>Gunicorn</strong> — servidor de produção</span>
+                <span><strong>Render</strong> — deploy na nuvem</span>
             </div>
 
             <a href="https://github.com/GustavoBitencourtLopes/FIAP-Challenge-GoodWe-ChargeHub-Intelligence.git" target="_blank" rel="noopener" class="btn-github modal-github">
