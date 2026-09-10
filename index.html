@@ -176,49 +176,50 @@
 
         <div class="projetos-grid">
 
-            <!-- Projeto 1 -->
-            <div class="projeto-card">
-                <div class="projeto-banner banner-1">
-                    <i class="fas fa-bolt"></i>
+                    <!-- Projeto 1 -->
+        <div class="projeto-card">
+            <div class="projeto-banner banner-1">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="projeto-corpo">
+                <h3>ChargeGrid Intelligence</h3>
+                <p>Simulador completo de sessão de recarga de veículos elétricos com tarifação inteligente, abas de pagamento e foco em eficiência energética — desafio GoodWe & FIAP 2026.</p>
+                <div class="projeto-tags">
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
                 </div>
-                <div class="projeto-corpo">
-                    <h3>Simulador de Recarga EV</h3>
-                    <p>Simulação de sessão de recarga de veículos elétricos, calculando energia consumida, tarifas e valor total — desafio GoodWe & FIAP.</p>
-                    <div class="projeto-tags">
-                        <span>JavaScript</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-                    <div class="projeto-acoes">
-                        <button class="btn-detalhes" onclick="abrirModal('modal-projeto1')">Ver Detalhes</button>
-                        <a href="https://github.com/LeoTakachi/Sprint01-DSA.git" target="_blank" rel="noopener" class="btn-github">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+                <div class="projeto-acoes">
+                    <button class="btn-detalhes" onclick="abrirModal('modal-projeto1')">Ver Detalhes</button>
+                    <a href="https://github.com/GustavoBitencourtLopes/FIAP-Challenge-GoodWe-ChargeHub-Intelligence.git" target="_blank" rel="noopener" class="btn-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <!-- Projeto 2 -->
-            <div class="projeto-card">
-                <div class="projeto-banner banner-2">
-                    <i class="fas fa-charging-station"></i>
+        <!-- Projeto 2 -->
+        <div class="projeto-card">
+            <div class="projeto-banner banner-2">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <div class="projeto-corpo">
+                <h3>FinTrack</h3>
+                <p>Aplicação web full-stack de finanças pessoais com controle de receitas, despesas, múltiplos cenários e assistente de IA integrado.</p>
+                <div class="projeto-tags">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>IA</span>
                 </div>
-                <div class="projeto-corpo">
-                    <h3>Prova de Conceito — GoodWe</h3>
-                    <p>Evolução do simulador de recarga, com sistema de tarifação inteligente, abas de pagamento e foco em eficiência energética e sustentabilidade.</p>
-                    <div class="projeto-tags">
-                        <span>JavaScript</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-                    <div class="projeto-acoes">
-                        <button class="btn-detalhes" onclick="abrirModal('modal-projeto2')">Ver Detalhes</button>
-                        <a href="https://github.com/GustavoBitencourtLopes/SPRINT-02-Prova-de-Conceito-Funcional-.git" target="_blank" rel="noopener" class="btn-github">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+                <div class="projeto-acoes">
+                    <button class="btn-detalhes" onclick="abrirModal('modal-projeto2')">Ver Detalhes</button>
+                    <a href="https://github.com/GustavoBitencourtLopes/FinTrack.git" target="_blank" rel="noopener" class="btn-github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
+        </div>
 
             <!-- Projeto 3 -->
             <div class="projeto-card">
@@ -247,58 +248,64 @@
 
     <!-- ===== MODAIS DE DETALHES DOS PROJETOS ===== -->
 
-    <!-- Modal Projeto 1 -->
+        <!-- Modal ChargeGrid -->
     <div class="modal-overlay" id="modal-projeto1" onclick="fecharModalFora(event, 'modal-projeto1')">
         <div class="modal-box">
             <button class="modal-fechar" onclick="fecharModal('modal-projeto1')"><i class="fas fa-times"></i></button>
             <h3>Sobre o Projeto</h3>
-            <p>Este projeto simula uma sessão de recarga de veículos elétricos, permitindo inserir tempo de recarga, potência do carregador, tipo de usuário e horário. Com base nesses dados, o sistema calcula automaticamente a energia consumida e o valor total da sessão — desenvolvido para o desafio GoodWe & FIAP.</p>
+            <p>Simulador completo de sessão de recarga de veículos elétricos desenvolvido para o desafio GoodWe & FIAP 2026. O sistema calcula energia consumida, aplica tarifação inteligente por potência e horário, e apresenta um resumo financeiro completo com opções de pagamento.</p>
 
             <h4>Funcionalidades</h4>
             <ul>
-                <li>Cálculo de energia consumida (kWh)</li>
-                <li>Tarifação por horário (normal ou pico)</li>
-                <li>Desconto para usuários premium</li>
-                <li>Validação dos dados inseridos</li>
-                <li>Resumo completo da sessão</li>
-            </ul>
-
-            <h4>Tecnologias e Ferramentas</h4>
-            <div class="modal-tech">
-                <span><strong>JavaScript</strong> — lógica de cálculo e regras de tarifação</span>
-                <span><strong>HTML</strong> — estrutura da interface</span>
-                <span><strong>CSS</strong> — estilização da aplicação</span>
-            </div>
-
-            <a href="https://github.com/LeoTakachi/Sprint01-DSA.git" target="_blank" rel="noopener" class="btn-github modal-github">
-                <i class="fab fa-github"></i> Ver no GitHub
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Projeto 2 -->
-    <div class="modal-overlay" id="modal-projeto2" onclick="fecharModalFora(event, 'modal-projeto2')">
-        <div class="modal-box">
-            <button class="modal-fechar" onclick="fecharModal('modal-projeto2')"><i class="fas fa-times"></i></button>
-            <h3>Sobre o Projeto</h3>
-            <p>Prova de conceito funcional que evolui o simulador de recarga de veículos elétricos, com sistema de tarifação inteligente por potência, acréscimo em horário de pico e desconto para usuários premium. A interface foi dividida em abas de sessão, tarifação e pagamento, com foco em eficiência energética e sustentabilidade.</p>
-
-            <h4>Funcionalidades</h4>
-            <ul>
-                <li>Cálculo de energia consumida por potência e tempo</li>
-                <li>Tarifação por faixa de potência do carregador</li>
+                <li>Cálculo de energia consumida (kWh) por potência e tempo</li>
+                <li>Tarifação por faixa de potência do carregador (lento, semirrápido, rápido)</li>
+                <li>Acréscimo de 30% em horário de pico</li>
+                <li>Desconto de 20% para usuários premium</li>
                 <li>Aba de pagamento com PIX, cartão e boleto</li>
                 <li>Resumo financeiro completo da sessão</li>
             </ul>
 
             <h4>Tecnologias e Ferramentas</h4>
             <div class="modal-tech">
-                <span><strong>JavaScript</strong> — cálculo energético e regras de tarifação</span>
+                <span><strong>JavaScript</strong> — lógica de cálculo e regras de tarifação</span>
                 <span><strong>HTML</strong> — estrutura das abas e interface</span>
                 <span><strong>CSS</strong> — estilização do sistema</span>
             </div>
 
-            <a href="https://github.com/GustavoBitencourtLopes/SPRINT-02-Prova-de-Conceito-Funcional-.git" target="_blank" rel="noopener" class="btn-github modal-github">
+            <a href="https://github.com/GustavoBitencourtLopes/FIAP-Challenge-GoodWe-ChargeHub-Intelligence.git" target="_blank" rel="noopener" class="btn-github modal-github">
+                <i class="fab fa-github"></i> Ver no GitHub
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal FinTrack -->
+    <div class="modal-overlay" id="modal-projeto2" onclick="fecharModalFora(event, 'modal-projeto2')">
+        <div class="modal-box">
+            <button class="modal-fechar" onclick="fecharModal('modal-projeto2')"><i class="fas fa-times"></i></button>
+            <h3>Sobre o Projeto</h3>
+            <p>Aplicação web full-stack de finanças pessoais, desenvolvida com Python e Flask. Permite criar cenários financeiros, registrar receitas e despesas e visualizar o saldo. Conta com um assistente de IA integrado (Google Gemini) que analisa os dados e responde perguntas sobre as finanças do usuário.</p>
+
+            <h4>Funcionalidades</h4>
+            <ul>
+                <li>Cadastro e login de usuários com autenticação segura</li>
+                <li>Criação de múltiplos cenários financeiros</li>
+                <li>Registro de receitas e despesas por categoria</li>
+                <li>Visualização de saldo e gráficos</li>
+                <li>Assistente de IA integrado via Google Gemini</li>
+                <li>Deploy na nuvem (Render)</li>
+            </ul>
+
+            <h4>Tecnologias e Ferramentas</h4>
+            <div class="modal-tech">
+                <span><strong>Python</strong> — linguagem principal</span>
+                <span><strong>Flask</strong> — framework web</span>
+                <span><strong>SQLAlchemy / SQLite</strong> — banco de dados</span>
+                <span><strong>Flask-Login</strong> — autenticação de usuários</span>
+                <span><strong>Google Gemini</strong> — assistente de IA integrado</span>
+                <span><strong>Chart.js</strong> — gráficos interativos</span>
+            </div>
+
+            <a href="https://github.com/GustavoBitencourtLopes/FinTrack.git" target="_blank" rel="noopener" class="btn-github modal-github">
                 <i class="fab fa-github"></i> Ver no GitHub
             </a>
         </div>
